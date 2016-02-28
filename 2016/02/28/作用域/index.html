@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>作用域 | GeneralZhang&#39;s home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="块级作用域花括号{}括起来的代码共享一块作用域，里面的变量都对内或者内部级联的块级作用域可见。基于函数的作用域在JavaScript中，作用域是基于函数来界定的。也就是说属于一个函数内部的代码，函数内部以及内部嵌套的代码都可以访问函数的变量。　严格的说，在JavaScript也存在块级作用域。如下面几种情况：1.with1234561 var obj = &amp;#123;a: 2, b: 2, c:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="作用域">
+<meta property="og:url" content="http://yoursite.com/2016/02/28/作用域/index.html">
+<meta property="og:site_name" content="GeneralZhang's home">
+<meta property="og:description" content="块级作用域花括号{}括起来的代码共享一块作用域，里面的变量都对内或者内部级联的块级作用域可见。基于函数的作用域在JavaScript中，作用域是基于函数来界定的。也就是说属于一个函数内部的代码，函数内部以及内部嵌套的代码都可以访问函数的变量。　严格的说，在JavaScript也存在块级作用域。如下面几种情况：1.with1234561 var obj = &amp;#123;a: 2, b: 2, c:">
+<meta property="og:updated_time" content="2016-02-28T13:58:47.009Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="作用域">
+<meta name="twitter:description" content="块级作用域花括号{}括起来的代码共享一块作用域，里面的变量都对内或者内部级联的块级作用域可见。基于函数的作用域在JavaScript中，作用域是基于函数来界定的。也就是说属于一个函数内部的代码，函数内部以及内部嵌套的代码都可以访问函数的变量。　严格的说，在JavaScript也存在块级作用域。如下面几种情况：1.with1234561 var obj = &amp;#123;a: 2, b: 2, c:">
+  
+  
+    <link rel="icon" href="favicon.png">
+  
+  
+ <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+ <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+
+
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" type="text/css">
+  
+
+  
+
+  
+</head>
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="/" id="logo"><i class="logo" style="background-image: url(/css/images/logo.jpg)"></i><span class="site-title">GeneralZhang&#39;s home</span></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/.">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/resume">resume</a>
+        
+      </nav>
+      
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="/"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+      
+      <div id="search-form-wrap">
+        
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit"> </button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        
+      </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tr>
+        
+          <td><a class="main-nav-link" href="/.">Home</a></td>
+        
+          <td><a class="main-nav-link" href="/archives">Archives</a></td>
+        
+          <td><a class="main-nav-link" href="/categories">Categories</a></td>
+        
+          <td><a class="main-nav-link" href="/tags">Tags</a></td>
+        
+          <td><a class="main-nav-link" href="/resume">resume</a></td>
+        
+        <td>
+          
+            <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="搜索"><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+          
+        </td>
+      </tr>
+    </table>
+  </div>
+</header>
+
+    <div class="outer">
+      
+        <aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      <img id="avatar" src="/">
+      <h2 id="name">generalzhang</h2>
+      <h3 id="title">undefined</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>undefined</span>
+      <a id="follow" href="undefined">关注我</a>
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        4
+        <span>文章</span>
+      </div>
+      <div class="article-info-block">
+        1
+        <span>标签</span>
+      </div>
+    </div>
+    
+    <div class="contact-info profile-block">
+      <table class="contact-list">
+        <tr>
+          
+          <td><a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank" title="github"><i class="fa fa-github"></i></a></td>
+          
+          <td><a href="/#" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></td>
+          
+          <td><a href="/#" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></td>
+          
+          <td><a href="/#" target="_blank" title="dribbble"><i class="fa fa-dribbble"></i></a></td>
+          
+          <td><a href="/atom.xml" target="_blank" title="rss"><i class="fa fa-rss"></i></a></td>
+          
+        </tr>
+      </table>
+    </div>
+    
+    
+  </div>
+</aside>
+
+      
+      <section id="main"><article id="post-作用域" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      作用域
+    </h1>
+  
+
+        <div class="article-meta">
+          
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2016/02/28/作用域/">
+      <time datetime="2016-02-28T12:34:30.000Z" itemprop="datePublished">2016-02-28</time>
+    </a>
+  </div>
+
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+                
+        <p><strong>块级作用域</strong><br>花括号{}括起来的代码共享一块作用域，里面的变量都对内或者内部级联的块级作用域可见。<br><strong>基于函数的作用域</strong><br>在JavaScript中，作用域是基于函数来界定的。也就是说属于一个函数内部的代码，函数内部以及内部嵌套的代码都可以访问函数的变量。<br>　严格的说，在JavaScript也存在块级作用域。如下面几种情况：<br>1.with<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> var obj = &#123;a: <span class="number">2</span>, b: <span class="number">2</span>, c: <span class="number">2</span>&#125;;</span><br><span class="line"><span class="number">2</span> <span class="keyword">with</span> (obj) &#123; //均作用于obj上</span><br><span class="line"><span class="number">3</span>      a = <span class="number">5</span>;</span><br><span class="line"><span class="number">4</span>      b = <span class="number">5</span>;</span><br><span class="line"><span class="number">5</span>      c = <span class="number">5</span>;  </span><br><span class="line"><span class="number">6</span> &#125;</span><br></pre></td></tr></table></figure></p>
+<p>2.let<br>let是ES6新增的定义变量的方法，其定义的变量仅存在于最近的{}之内。如下<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var foo = true;</span><br><span class="line"><span class="keyword">if</span> (foo) &#123;</span><br><span class="line">    let bar = foo * <span class="number">2</span>;</span><br><span class="line">    bar = something( bar );</span><br><span class="line">    console.log( bar );</span><br><span class="line">&#125;</span><br><span class="line">console.log( bar ); // ReferenceError</span><br></pre></td></tr></table></figure></p>
+<p>3.const<br>与let一样，唯一不同的是const定义的变量值不能修改。如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> var foo = true;</span><br><span class="line"><span class="number">2</span> <span class="keyword">if</span> (foo) &#123;</span><br><span class="line"><span class="number">3</span>     var a = <span class="number">2</span>;</span><br><span class="line"><span class="number">4</span>     const b = <span class="number">3</span>; //仅存在于<span class="keyword">if</span>的&#123;&#125;内</span><br><span class="line"><span class="number">5</span>     a = <span class="number">3</span>;</span><br><span class="line"><span class="number">6</span>     b = <span class="number">4</span>; // 出错，值不能修改</span><br><span class="line"><span class="number">7</span> &#125;</span><br><span class="line"><span class="number">8</span> console.log( a ); // <span class="number">3</span></span><br><span class="line"><span class="number">9</span> console.log( b ); // ReferenceError!</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/02/28/作用域/" data-id="cil6jlm4y0005acvgtgoa4sln" class="article-share-link">分享到</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/01/17/武隆旅游/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">武隆旅游</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+</section>
+      
+        <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul id="recent-post" class="">
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2016/02/28/作用域/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2016/02/28/作用域/" class="title">作用域</a></p>
+              <p class="item-date"><time datetime="2016-02-28T12:34:30.000Z" itemprop="datePublished">2016-02-28</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2016/01/17/武隆旅游/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2016/01/17/武隆旅游/" class="title">武隆旅游</a></p>
+              <p class="item-date"><time datetime="2016-01-17T14:54:45.000Z" itemprop="datePublished">2016-01-17</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/10/27/My-New-Post/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2015/10/27/My-New-Post/" class="title">My New Post</a></p>
+              <p class="item-date"><time datetime="2015-10-27T07:47:40.000Z" itemprop="datePublished">2015-10-27</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/10/27/hello-world/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2015/10/27/hello-world/" class="title">Hello World</a></p>
+              <p class="item-date"><time datetime="2015-10-27T07:43:31.864Z" itemprop="datePublished">2015-10-27</time></p>
+            </div>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/生活/" style="font-size: 10px;">生活</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+  <div id="toTop" class="fa fa-chevron-up"></div>
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 generalzhang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+
+
+
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
